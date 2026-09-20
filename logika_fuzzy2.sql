@@ -1,13 +1,7 @@
--- ============================================================
--- 1. PEMBUATAN DATABASE PERTEMUAN 2
--- ============================================================
+
 CREATE DATABASE IF NOT EXISTS db_logika_fuzzy_tugas2;
 USE db_logika_fuzzy_tugas2;
 
-
--- ============================================================
--- 2. TABEL DOMAIN UTAMA (FUNGSI TRAPESIUM)
--- ============================================================
 CREATE TABLE IF NOT EXISTS domain_kategori_usia (
     id_kategori INT AUTO_INCREMENT PRIMARY KEY,
     nama_kategori VARCHAR(50) NOT NULL,
@@ -20,7 +14,6 @@ CREATE TABLE IF NOT EXISTS domain_kategori_usia (
     persamaan_turun VARCHAR(100) NOT NULL
 );
 
--- Insert Data Domain Kategori (Persamaan Trapesium)
 INSERT INTO domain_kategori_usia 
 (nama_kategori, rentang_usia, titik_a_kiri, titik_b_puncak1, titik_c_puncak2, titik_d_kanan, persamaan_naik, persamaan_turun) 
 VALUES
@@ -31,10 +24,6 @@ VALUES
 ('Dewasa', '20 - 65 tahun', 20.0, 30.0, 55.0, 65.0, 'mu(x) = (x - 20) / 10', 'mu(x) = (65 - x) / 10'),
 ('Lansia', '>= 65 tahun', 65.0, 80.0, 80.0, 80.0, 'mu(x) = (x - 65) / 15', 'mu(x) = 1 (konstan)');
 
-
--- ============================================================
--- 3. TABEL DETAIL PER KATEGORI (SEPERTI PADA DIAGRAM)
--- ============================================================
 
 -- A. TABEL BAYI
 CREATE TABLE IF NOT EXISTS domain_bayi (
